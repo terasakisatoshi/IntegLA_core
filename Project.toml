@@ -1,0 +1,8 @@
+name = "IntegLACore"
+uuid = "bebdbc2e-cc32-408e-8bff-d510dd770827"
+authors = ["Satoshi Terasaki <terasakisatoshi.math@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+FStrings = "1e2663ae-5621-49ef-9c0a-672f85872094"
+JET = "c3a54625-cd67-489e-a8e7-0a5a0ff4e31b"
