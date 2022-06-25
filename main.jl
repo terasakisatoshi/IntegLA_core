@@ -1,3 +1,12 @@
+#=
+How to use
+
+```
+$ julia --project=@. julia -e 'using Pkg; Pkg.instantiate()' # only once
+$ julia --project=@. julia main.jl
+```
+=#
+
 using IntegLACore: generate
 
 objdir = "./obj/"
@@ -15,9 +24,9 @@ generate(;
     ],
     args=[("{target}", "{Val0}"), ("const {Vec}", "{Vec0}"), ("{Vec}", "{Vec1}")],
     operation="""
-                  for( {INT} i = 0; i < {Vec0}.size; i++){{
+                  for( {INT} i = 0; i < {Vec0}.size; i++){
                       {Vec1}[i] += {Val0} * {Vec0};
-                  }}
+                  }
     """,
     srcfile=open(joinpath(objdir, "axpy.c"), "a"),
     testfile=nothing,
